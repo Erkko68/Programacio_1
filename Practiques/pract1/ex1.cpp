@@ -140,6 +140,8 @@ void mode_2(){
 		
 		if(ruleta==0){
 		
+			printf("Ha sortit el 0!\n");
+			
 			printf("Has perdut %i Euros!\n",aposta);
 				
 			capital = capital-aposta;
@@ -151,7 +153,6 @@ void mode_2(){
 	
 			printf("Has apostat per imparell i ha sortit %i\n",ruleta);
 		
-			
 		
 			if(ruleta % 2 == 0){  //determinar si el nombre de la ruleta es parell mirant si obtenim residu.
 		
@@ -173,7 +174,7 @@ void mode_2(){
 		
 		}else if(guess==2){ //aposta parell
 	
-			printf("Has apostat per imparell i ha sortit %i\n",ruleta);
+			printf("Has apostat per parell i ha sortit %i\n",ruleta);
 		
 			if(ruleta % 2 == 0){ //determinar si el nombre de la ruleta es parell mirant si obtenim residu.
 		
@@ -259,6 +260,5 @@ int main(){
 	//mostrar el nombre de vegades que el jugador ha guanyat i perdut.
 	
 	printf("Has guanyat %i partides i n'has perdut %i.\n",guanya,perd); 
-
 
 }
