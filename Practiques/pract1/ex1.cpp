@@ -22,7 +22,7 @@ int perd,guanya; 	//variables per registrar les vegades que guanya o perd.
 void random_numb(){
 
 	srand(time(NULL));
-	ruleta = rand() % 36 + 1;
+	ruleta = rand() % 37;
 	
 }
 
