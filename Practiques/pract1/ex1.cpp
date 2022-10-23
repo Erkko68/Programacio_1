@@ -50,7 +50,7 @@ void mode_1(){
 	printf(">");
 	scanf("%i",&aposta);
 			
-		while(aposta>capital || aposta<0){ //verificar que el jugador té prous diners
+		while(aposta>capital || aposta<0 || aposta==0){ //verificar que el jugador té prous diners
 				
 			printf("No tens prous diners!\n");
 			printf(">");
@@ -115,7 +115,7 @@ void mode_2(){
 	printf(">");
 	scanf("%i",&aposta);
 			
-		while(aposta>capital || aposta<0){ //verificar que el jugador té prous diners
+		while(aposta>capital || aposta<0 || aposta==0){ //verificar que el jugador té prous diners
 				
 			printf("No tens prous diners!\n");
 			printf(">");
@@ -147,9 +147,8 @@ void mode_2(){
 			capital = capital-aposta;
 				
 			perd++;
-		}
-		
-		if(guess==1){ //Aposta per imparell
+			
+		}else if(guess==1){ //Aposta per imparell
 	
 			printf("Has apostat per imparell i ha sortit %i\n",ruleta);
 		
@@ -261,4 +260,5 @@ int main(){
 	
 	printf("Has guanyat %i partides i n'has perdut %i.\n",guanya,perd); 
 
+	
 }
