@@ -50,7 +50,7 @@ void mode_1(){
 	printf(">");
 	scanf("%i",&aposta);
 			
-		while(aposta>capital || aposta<0 || aposta==0){ //verificar que el jugador té prous diners
+		while(aposta>capital || aposta=<0){ //verificar que el jugador té prous diners
 				
 			printf("No tens prous diners!\n");
 			printf(">");
@@ -115,7 +115,7 @@ void mode_2(){
 	printf(">");
 	scanf("%i",&aposta);
 			
-		while(aposta>capital || aposta<0 || aposta==0){ //verificar que el jugador té prous diners
+		while(aposta>capital || aposta=<0){ //verificar que el jugador té prous diners
 				
 			printf("No tens prous diners!\n");
 			printf(">");
