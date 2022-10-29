@@ -50,7 +50,7 @@ void mode_1(){
 	printf(">");
 	scanf("%i",&aposta);
 			
-		while(aposta>capital || aposta=<0){ //verificar que el jugador té prous diners
+		while(aposta>capital || aposta<=0){ //verificar que el jugador té prous diners
 				
 			printf("No tens prous diners!\n");
 			printf(">");
@@ -115,7 +115,7 @@ void mode_2(){
 	printf(">");
 	scanf("%i",&aposta);
 			
-		while(aposta>capital || aposta=<0){ //verificar que el jugador té prous diners
+		while(aposta>capital || aposta<=0){ //verificar que el jugador té prous diners
 				
 			printf("No tens prous diners!\n");
 			printf(">");
@@ -136,7 +136,7 @@ void mode_2(){
 				
 		}
 		
-		//regla de la ruleta, si surt el numero 0 el jugador o perd tot.
+		//regla de la ruleta, si surt el numero 0 el jugador sempre perd.
 		
 		if(ruleta==0){
 		
@@ -148,51 +148,38 @@ void mode_2(){
 				
 			perd++;
 			
-		}else if(guess==1){ //Aposta per imparell
-	
-			printf("Has apostat per imparell i ha sortit %i\n",ruleta);
+		}else {
 		
-		
-			if(ruleta % 2 == 0){  //determinar si el nombre de la ruleta es parell mirant si obtenim residu.
-		
-				printf("Has perdut %i Euros!\n",aposta);
-				
-				capital = capital-aposta;
-				
-				perd++;
-		
-			}else{
+				if(guess==1){
 			
-				printf("Has guanyat %i Euros!\n",aposta);
-				
-				capital = capital+aposta;
-				
-				guanya++;
+					printf("Has apostat per imparell i ha sortit %i\n",ruleta); //aposta imparell
 			
-			}
-		
-		}else if(guess==2){ //aposta parell
-	
-			printf("Has apostat per parell i ha sortit %i\n",ruleta);
-		
-			if(ruleta % 2 == 0){ //determinar si el nombre de la ruleta es parell mirant si obtenim residu.
-		
-				printf("Has guanyat %i Euros!\n",aposta);
-				
-				capital = capital+aposta;
-				
-				guanya++;
-		
-			}else{
+				}else {
 			
-				printf("Has perdut %i Euros!\n",aposta);
+					printf("Has apostat per parell i ha sortit %i\n",ruleta); //aposta parell
+			
+				}
 				
-				capital = capital-aposta;
+//determinar si el nombre de la ruleta es parell mirant si obtenim residu.
+
+				if((ruleta % 2 == 0 && guess==1) || (ruleta % 2 != 0 && guess==2)){
+		
+					printf("Has perdut %i Euros!\n",aposta);
 				
-				perd++;
+					capital = capital-aposta;
+				
+					perd++;
+		
+				}else if((ruleta % 2 == 0 && guess==2) || (ruleta % 2 != 0 && guess==1)){
+			
+					printf("Has guanyat %i Euros!\n",aposta);
+				
+					capital = capital+aposta;
+				
+					guanya++;
+				}
 			
 			}
-		}
 		
 //tornar a demanar al jugador quin mode vol jugar en cas que no ho hagi perdut tot. I generar un nou numero aleatori.
 	
