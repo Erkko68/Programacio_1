@@ -162,7 +162,7 @@ void mode_2(){
 				
 //determinar si el nombre de la ruleta es parell mirant si obtenim residu.
 
-				if((ruleta % 2 == 0 && guess==1) || (ruleta % 2 != 0 && guess==2)){
+				if((ruleta % 2 == 0 && guess==1) || (ruleta % 2 != 0 && guess==2)){ //definir casos en els que es perd dins la condicio del if
 		
 					printf("Has perdut %i Euros!\n",aposta);
 				
@@ -170,7 +170,7 @@ void mode_2(){
 				
 					perd++;
 		
-				}else if((ruleta % 2 == 0 && guess==2) || (ruleta % 2 != 0 && guess==1)){
+				}else if((ruleta % 2 == 0 && guess==2) || (ruleta % 2 != 0 && guess==1)){ //definir casos en els que es guanya dins la condicio del if
 			
 					printf("Has guanyat %i Euros!\n",aposta);
 				
