@@ -21,7 +21,6 @@ int perd,guanya; 	//variables per registrar les vegades que guanya o perd.
 
 void random_numb(){
 
-	srand(time(NULL));
 	ruleta = rand() % 37;
 	
 }
@@ -196,6 +195,8 @@ void mode_2(){
 
 int main(){
 
+	srand(time(NULL));
+	
 	printf("Benvingut al joc de la Ruleta!\n");  //Mostrar en pantalla la funcionalitat del programa.
 	
 	random_numb(); //generar nombre aleatori
