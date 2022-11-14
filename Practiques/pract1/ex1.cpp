@@ -19,12 +19,6 @@ int perd,guanya; 	//variables per registrar les vegades que guanya o perd.
 
 //inicialització generacio de nombres aleatoris.
 
-void random_numb(){
-
-	ruleta = rand() % 37;
-	
-}
-
 //funció per mostrar la user interface.
 
 void ui_print(){
@@ -97,7 +91,7 @@ void mode_1(){
 			
 		if(capital>0){ 
 		
-			random_numb();
+			ruleta = rand() % 37;
 			ui_print();
 			
 		}
@@ -184,7 +178,7 @@ void mode_2(){
 	
 	if(capital>0){
 		
-		random_numb();
+		ruleta = rand() % 37;
 		ui_print();
 			
 	}
@@ -195,11 +189,11 @@ void mode_2(){
 
 int main(){
 
-	srand(time(NULL));
+	srand(time(NULL)); //inicialització generació numero aleatori
 	
 	printf("Benvingut al joc de la Ruleta!\n");  //Mostrar en pantalla la funcionalitat del programa.
 	
-	random_numb(); //generar nombre aleatori
+	ruleta = rand() % 37; //generar nombre aleatori
 	
 	ui_print();	//Cridar a la funció ui_print per a mostrar els modes de joc
 	
