@@ -19,6 +19,8 @@ void read_search();
 void read();
 void process();
 
+//define arrays and strings of values
+
 char words[MAX_WORDS][WORD_LENGHT];
 int codified_words[MAX_WORDS][COD_LENGHT]={{}};
 
@@ -130,19 +132,34 @@ char compare(char arr[WORD_LENGHT+1]){
 //
 void process(){
 
-	read_search();
+	read_search(); //request and store search words
 	
-	for(int i=0;i<MAX_WORDS;i++){
+	//codify and store codified search words
+	
+	for(int i=0;i<MAX_WORDS;i++){ 
 		codify(words[i],i);
 	}
 	
-	read();
+	read(); //process the text.
 	
 	printf("S'han trobat %i anagrames\n",angr);
+	
+	//Debug only
+	/*
+	//Show codified words
+	for(int i=0;i<=MAX_WORDS;i++){
+		for(int j=0;j<COD_LENGHT;j++){
+			printf("%i",codified_words[i][j]);
+		}
+		printf("\n");
+	}
+	//Show words
+	for(int i=0;i<MAX_WORDS;i++){
+		printf("%s",words[i]);
+		printf("\n");
+	}
+	*/
 }
-
-
-
 
 int main(){
 
