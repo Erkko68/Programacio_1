@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define WORD_LENGHT 50
-#define MAX_WORDS 10
+#define MAX_WORDS 11
 #define COD_LENGHT 26
 
 //Define variable number anagrams
@@ -63,22 +63,22 @@ void read(){
 	
 	while(letter_text!='.' and j<WORD_LENGHT){
 		if(isalpha(letter_text)){
-			words[10][j]=letter_text;
+			words[MAX_WORDS][j]=letter_text;
 			j++;
 		}else if(!isalpha(letter_text)){
-			words[10][j+1]='\0';
+			words[MAX_WORDS][j+1]='\0';
 			j=0;
 			
-			if(isalpha(words[10][0])){	//when the next char is not a letter means the word has ended so 
-				compare(words[10]);		//it calls the function compare to process it
+			if(isalpha(words[MAX_WORDS][0])){	//when the next char is not a letter means the word has ended so 
+				compare(words[MAX_WORDS]);		//it calls the function compare to process it
 			}
 			
 		}	
 		scanf("%c",&letter_text);
 	
 	}
-	if(isalpha(words[10][0])){ //used if the last word is the anagram of the search one.
-		compare(words[10]);
+	if(isalpha(words[MAX_WORDS][0])){ //used if the last word is the anagram of the search one.
+		compare(words[MAX_WORDS]);
 	}
 }
 
@@ -104,7 +104,7 @@ char codify(char arr[WORD_LENGHT+1],int i){
 
 char compare(char arr[WORD_LENGHT+1]){
 
-	codify(arr,10);
+	codify(arr,MAX_WORDS);
 
 	int c=0;
 	
@@ -113,7 +113,7 @@ char compare(char arr[WORD_LENGHT+1]){
 	for(i=0;i<MAX_WORDS;i++){
 		
 		for(j=0;j<COD_LENGHT;j++){
-        	if(codified_words[i][j]==codified_words[10][j]){
+        	if(codified_words[i][j]==codified_words[MAX_WORDS][j]){
 				c++;
 			}
 		}
@@ -124,7 +124,7 @@ char compare(char arr[WORD_LENGHT+1]){
 		c=0;	
 	}
 	
-	memset(words[10],0,sizeof(words[10])); //reset word
+	memset(words[MAX_WORDS],0,sizeof(words[10])); //reset word
 	
 	return 1;
 }
