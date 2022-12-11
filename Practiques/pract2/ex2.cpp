@@ -1,8 +1,6 @@
 //THis program solves 4x4 matrices using the Laplace expansion methodology, it uses sub matrices of the original one to calculate the final determinant.
 
-
 #include <stdio.h>
-#include <string.h>
 
 //define matrices to store values
 
