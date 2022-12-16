@@ -1,4 +1,4 @@
-//THis program solves 4x4 matrices using the Laplace expansion methodology, it uses sub matrices of the original one to calculate the final determinant.
+//This program solves 4x4 matrices using the Laplace expansion methodology, it uses sub matrices of the original one to calculate the final determinant.
 
 #include <stdio.h>
 
@@ -13,6 +13,8 @@ float matrix_2x2[2][2];
 float calculate_4x4();
 float calculate_3x3();
 float calculate_2x2();
+float show_results(float det);
+void scan_store();
 
 //scan and store the matrix
 
