@@ -37,6 +37,7 @@ void scan_store(){
     | m n o p |
 
 */
+
 float calculate_4x4(){
 
 	float det_4x4=0;
@@ -48,6 +49,7 @@ float calculate_4x4(){
 				if(i!=0 and j!=k){
 					//Debug
 					//printf("%g ",matrix_4x4[i][j]);
+					
 					//Create each sub 3x3 matrix
 					matrix_3x3[row][column]=matrix_4x4[i][j];
 					column++;
@@ -59,8 +61,9 @@ float calculate_4x4(){
 				row++;
 			}
 		}
+		//Calculate determinant
 		if(k==0 or k==2){
-			det_4x4 = calculate_3x3()*matrix_4x4[0][k]+det_4x4;
+			det_4x4 = calculate_3x3()*matrix_4x4[0][k]+det_4x4; 
 		}else if(k==1 or k==3){
 			det_4x4 = -calculate_3x3()*matrix_4x4[0][k]+det_4x4;
 		}
@@ -99,6 +102,7 @@ float calculate_3x3(){
 			//Debug
 			//printf("\n");
 		}
+		//Calculate determinant
 		if(k==0 or k==2){
 			det_3x3 = calculate_2x2()*matrix_3x3[0][k]+det_3x3;
 		}else{
