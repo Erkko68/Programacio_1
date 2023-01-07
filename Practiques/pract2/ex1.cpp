@@ -23,7 +23,7 @@ void process();
 char words[MAX_WORDS][WORD_LENGHT];
 int codified_words[MAX_WORDS][COD_LENGHT]={{}};
 
-//Read and store serach words into words array with a maximum of 10 words.
+//Read and store search words into words array with a maximum of 10 words.
 
 void read_search(){
 	
@@ -31,8 +31,6 @@ void read_search(){
 	
 	int i=0,j=0;
 	
-	
-	printf("Anagrames a buscar: \n");
 	scanf("%c",&letter);
 		
 	while(letter!='.' and i<MAX_WORDS and j<WORD_LENGHT){ //store each letter in the correspondig array postion
@@ -50,7 +48,7 @@ void read_search(){
 	}
 }
 
-//Read and store one word from the given text.
+//Read and store one word from the given text in the last matrix row.
 
 void read(){
 
@@ -69,7 +67,7 @@ void read(){
 			j=0;
 			
 			if(isalpha(words[MAX_WORDS][0])){	//when the next char is not a letter means the word has ended so 
-				compare(words[MAX_WORDS]);		//it calls the function compare to process it
+				compare(words[MAX_WORDS]);	//it calls the function compare to process it
 			}
 			
 		}	
@@ -123,7 +121,7 @@ char compare(char arr[WORD_LENGHT+1]){
 		c=0;	
 	}
 	
-	memset(words[MAX_WORDS],0,sizeof(words[10])); //reset word
+	memset(words[MAX_WORDS],0,sizeof(words[11])); //reset word
 	
 	return 1;
 }
@@ -132,6 +130,12 @@ char compare(char arr[WORD_LENGHT+1]){
 void process(){
 
 	read_search(); //request and store search words
+	
+	printf("Anagrames a buscar:");
+	for(int i=0;i<MAX_WORDS;i++){
+		printf("%s ",words[i]);
+	}
+	printf("\n");
 	
 	//codify and store codified search words
 	
